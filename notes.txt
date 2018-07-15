@@ -1,0 +1,10 @@
+Tried:
+
+sudo wget -O - -q http://10.0.0.109:30003 | egrep --line-buffered 'MSG,1,|MSG,3,|MSG,5,' >> log.txt
+
+MSG,3,1,1,A8C6DD,1,2018/07/15,20:50:52.215,2018/07/15,20:50:52.259,,24375,,,39.86603,-105.66052,,,,,,
+MSG,3,1,1,A8C6DD,1,2018/07/15,20:50:52.765,2018/07/15,20:50:52.806,,24375,,,39.86623,-105.66161,,,,,,
+
+Seems to record every half second, which is pretty darn good.
+
+
