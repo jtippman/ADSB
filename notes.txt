@@ -7,4 +7,17 @@ MSG,3,1,1,A8C6DD,1,2018/07/15,20:50:52.765,2018/07/15,20:50:52.806,,24375,,,39.8
 
 Seems to record every half second, which is pretty darn good.
 
+ID, Type, Description
+MSG,1, Identification and Category, Contains Tail/Flight Number/Call Sign
+MSG,2, Surface Position Message, Triggered by nose gear squat switch
+MSG,3, Airborne Position Message, Contains Altitude, Latitude and Longitude
+MSG,4, Airborne Velocity Message, Contains Speed and Heading
+MSG,5, Surveillance Alt Message, Triggered by ground radar, Not CRC secured. MSG,5 will only be output if aircraft has previously sent a MSG, 1, 2, 3, 4, or 8 signal
+MSG,6, Surveillance ID Message, MSG,6 will only be output if the aircraft has previously sent a MSG 1, 2, 3, 4, or 8 signal
+MSG,7, Air to Air Message, Triggered from TCAS
+MSG,8, All Call Reply, Broadcast, but also triggered by ground radar
+
+Set up the process script inside python so now I get the output directly into the python script
+
+Now I just have to process the data and I should be able to trim down the size even further
 
