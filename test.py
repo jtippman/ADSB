@@ -1,31 +1,3 @@
-# FROM https://github.com/martinohanlon/flightdata/blob/master/flightdata.py
-#
+import os
 
-from flightdata import FlightData
-from time import sleep
-
-myflights = FlightData()
-while True:
-	#loop through each aircraft found
-	for aircraft in myflights.aircraft:
-
-		#read the aircraft data
-		print(aircraft.hex)
-		print(aircraft.squawk)
-		print(aircraft.flight)
-		print(aircraft.lat)
-		print(aircraft.lon)
-		print(aircraft.validposition)
-		print(aircraft.altitude)
-		print(aircraft.vert_rate)
-		print(aircraft.track)
-		print(aircraft.validtrack)
-		print(aircraft.speed)
-		print(aircraft.messages)
-		print(aircraft.seen)
-		print(aircraft.mlat)
-
-sleep(1)
-
-#refresh the flight data
-myflights.refresh()
+os.system("wget -O - -q http://10.0.0.109:30003 | egrep --line-buffered 'MSG,1,|MSG,3,|MSG,5,' >> log_python.txt")
